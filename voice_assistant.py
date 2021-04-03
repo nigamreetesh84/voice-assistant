@@ -93,17 +93,6 @@ def takeCommand():
     return query
 
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-
-    # Enable low security in gmail
-    server.login('nigamreetesh84@gmail.com', 'FORword@3')
-    server.sendmail('nigamreetesh84@gmail.com', to, content)
-    server.close()
-
-
 if __name__ == '__main__':
     def clear(): return os.system('cls')
 
