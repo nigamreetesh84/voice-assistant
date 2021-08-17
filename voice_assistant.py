@@ -1,5 +1,5 @@
 import subprocess
-import wolframalpha
+# import wolframalpha
 import pyttsx3
 import tkinter
 import json
@@ -10,19 +10,19 @@ import datetime
 import wikipedia
 import webbrowser
 import os
-import winshell
-import pyjokes
-import feedparser
+# import winshell
+# import pyjokes
+# import feedparser
 import smtplib
 import ctypes
 import time
 import requests
 import shutil
-from twilio.rest import Client
-from clint.textui import progress
+# from twilio.rest import Client
+# from clint.textui import progress
 #from ecapture import ecapture as ec
 from bs4 import BeautifulSoup
-import win32com.client as wincl
+# import win32com.client as wincl
 from urllib.request import urlopen
 import re
 
@@ -192,19 +192,19 @@ if __name__ == '__main__':
             speak("Thanks for giving me your time")
             exit()
 
-        elif 'joke' in query:
-            speak(pyjokes.get_joke())
+        # elif 'joke' in query:
+        #     speak(pyjokes.get_joke())
 
-        elif "calculate" in query:
+        # elif "calculate" in query:
 
-            app_id = "KPGL8P-YAKX2J5RAK"
-            client = wolframalpha.Client(app_id)
-            indx = query.lower().split().index('calculate')
-            query = query.split()[indx + 1:]
-            res = client.query(' '.join(query))
-            answer = next(res.results).text
-            print("The answer is " + answer)
-            speak("The answer is " + answer)
+        #     app_id = "KPGL8P-YAKX2J5RAK"
+        #     client = wolframalpha.Client(app_id)
+        #     indx = query.lower().split().index('calculate')
+        #     query = query.split()[indx + 1:]
+        #     res = client.query(' '.join(query))
+        #     answer = next(res.results).text
+        #     print("The answer is " + answer)
+        #     speak("The answer is " + answer)
 
         elif "google search" in query:
             speak("What should I search in google?")
@@ -305,36 +305,22 @@ if __name__ == '__main__':
             else:
                 speak(" City Not Found ")
 
-        elif "send message " in query:
-            # You need to create an account on Twilio to use this service
-            account_sid = 'Account Sid key'
-            auth_token = 'Auth token'
-            client = Client(account_sid, auth_token)
-
-            message = client.messages \
-                .create(
-                    body=takeCommand(),
-                    from_='Sender No',
-                    to='Receiver No'
-                )
-
-            print(message.sid)
-
+        
         elif "wikipedia" in query:
             webbrowser.open("wikipedia.com")
 
-        elif "what is" in query or "who is" in query:
+        # elif "what is" in query or "who is" in query:
 
-            # Use the same API key
-            # that we have generated earlier
-            client = wolframalpha.Client("KPGL8P-YAKX2J5RAK")
-            res = client.query(query)
+        #     # Use the same API key
+        #     # that we have generated earlier
+        #     client = wolframalpha.Client("KPGL8P-YAKX2J5RAK")
+        #     res = client.query(query)
 
-            try:
-                print(next(res.results).text)
-                speak(next(res.results).text)
-            except StopIteration:
-                print("No results")
+        #     try:
+        #         print(next(res.results).text)
+        #         speak(next(res.results).text)
+        #     except StopIteration:
+        #         print("No results")
 
         # elif "" in query:
             # Command go here
