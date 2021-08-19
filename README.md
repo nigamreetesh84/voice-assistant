@@ -1,6 +1,14 @@
 # voice-assistant
 Developing voice assistant using python to make day to day life easy like creating architecture diagram, sending emails, write notes , listen news and many more
 
+# create any directory <dir name>
+# do cd <dir name>
+
+# First install git 
+# git clone https://github.com/nigamreetesh84/voice-assistant.git 
+# cd voice-assistant
+# 
+
 #Open command terminal and type
 
 python -m venv git_env
